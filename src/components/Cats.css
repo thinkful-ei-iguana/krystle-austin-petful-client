@@ -1,0 +1,42 @@
+img {
+    width: 200px;
+    height: 200px;
+    margin-left: 40%;
+    margin-right: 40%;
+}
+
+h1 {
+    color: whitesmoke;
+}
+
+.link {
+    text-decoration-color: whitesmoke;
+}
+
+h3 {
+    text-align: center;
+    color: whitesmoke;
+}
+
+p {
+    text-align: center;
+    color: whitesmoke;
+    
+}
+
+div, .types {
+    text-align: center;
+    font-size: 20px;
+    color: whitesmoke;
+}
+
+button {
+    padding: 5px;
+    font-size: 18px;
+    margin: 10px;
+    width: 100px;
+}
+
+body {
+    background-color: #0669cc;
+}

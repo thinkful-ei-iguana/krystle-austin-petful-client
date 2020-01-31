@@ -15,6 +15,7 @@ The adoption process works strictly on a "First-In, First-Out" basis. The FIFO i
 
 ### Server Repo:
 
+https://github.com/thinkful-ei-iguana/krystle-austin-petful-server
 
 ### Created By:
 
