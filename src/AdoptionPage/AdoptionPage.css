@@ -1,0 +1,18 @@
+.AdoptionPage {
+    display: flex;
+    justify-content: center;
+    padding-top: 10vh;
+  }
+  
+  .pet-array {
+    max-width: 5%;
+    height: auto;
+  }
+  
+  .pets-list {
+    margin: 5px;
+  }
+  
+  li {
+    display: inline;
+  }

@@ -1,0 +1,32 @@
+.pet-image {
+    width: 300px;
+    margin-bottom: 15px;
+}
+
+.petCol{
+ 
+    height: 80vh;
+    max-width: 33vw;
+    margin-left: 50px;
+    background-color:#fff;
+    border:1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 3px 4px rgba(0,0,0,0.16), 0 3px 4px rgba(0,0,0,0.23);
+}
+
+.pet-name {
+    font-size: 200%;
+}
+
+.pet-info {
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    justify-content: space-around;
+}
+
+.petCol-btn {
+    margin: 50px auto 10px auto;
+    width: 150px;
+}
