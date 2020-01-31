@@ -1,22 +1,22 @@
 import React from 'react';
 
 import PetComponent from '../PetComponent/PetComponent';
-import './AdoptionPage.css';
+// import './AdoptionPage.css';
 
 
 export default function Adopt(props) {
- let dogsArray = props.dog.map(dog => {
+  let dogsArray = props.dogs.map(dog => {
     return (
-        <li key={dog.id}>
-            <img
-            className='pet-array'
-            src={dog.imageURL}
-            alt={dog.imageDescription}
-            />
-            <span>{dog.name}</span>
-        </li>
+      <li key={dog.id}>
+        <img
+          className='pet-array'
+          src={dog.imageURL}
+          alt={dog.imageDescription}
+        />
+        <span>{dog.name}</span>
+      </li>
     );
- });   
+  });
 
 
 let catsArray = props.cats.map(cat => {
@@ -35,7 +35,7 @@ let catsArray = props.cats.map(cat => {
        let catPort = !props.ready ? (
          false
        ) : (
-         <PetComp
+         <PetComponent
            age={props.adCat.age}
            breed={props.adCat.breed}
            imgURL={props.adCat.imageURL}
@@ -94,4 +94,4 @@ let catsArray = props.cats.map(cat => {
              {dogPort}
            </div>
          </>
-       );
+)};

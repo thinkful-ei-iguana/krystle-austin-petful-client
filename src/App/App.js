@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import { Route, Redirect, Switch } from 'react-router-dom';
+import { Route, Redirect, Switch, BrowserRouter } from 'react-router-dom';
 
-import './App.css';
+// import './App.css';
 
 import API from './Api';
 import Error from '../Error/Error';
@@ -17,8 +17,8 @@ class App extends Component {
       dog: [],
       cat: [],
       users: [],
-      adDog: null,
-      adCat: null,
+      addDog: null,
+      addCat: null,
       queue: null,
       ready: false
     };
@@ -42,7 +42,7 @@ class App extends Component {
         });
         this.setState({
           cat: data,
-          adCat: data[0]
+          addCat: data[0]
         });
       });
 
@@ -63,7 +63,7 @@ class App extends Component {
         });
         this.setState({
           dog: data,
-          adDog: data[0],
+          addDog: data[0],
           ready: true
         });
         // console.log(data)
@@ -95,7 +95,7 @@ class App extends Component {
             })
           },
           () => {
-            this.setState({ adDog: this.state.dog[0] });
+            this.setState({ addDog: this.state.dog[0] });
             console.log('dog', this.state.dog);
           }
         );
@@ -113,7 +113,7 @@ class App extends Component {
             })
           },
           () => {
-            this.setState({ adCat: this.state.cat[0] });
+            this.setState({ addCat: this.state.cat[0] });
             console.log('cat', this.state.cat);
           }
         );
@@ -134,8 +134,8 @@ class App extends Component {
           ready={this.state.ready}
           cats={this.state.cat}
           dogs={this.state.dog}
-          adDog={this.state.adDog}
-          adCat={this.state.adCat}
+          addDog={this.state.addDog}
+          addCat={this.state.addCat}
           handleAdoptPet={this.handleAdoptPet}
         />
       );
@@ -145,12 +145,14 @@ class App extends Component {
      
       <div className='App'>
         <main>
+          <BrowserRouter>
           <Switch>
             <Route exact path='/' component={landingPage} />
             <Route exact path='/adoption' component={adoptionPage} />
             <Route exact path='/404' component={Error} />
             <Redirect to='/404' />
           </Switch>
+          </BrowserRouter>
         </main>
       </div>
     );
