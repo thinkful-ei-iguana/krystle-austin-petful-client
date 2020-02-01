@@ -1,8 +1,43 @@
 img {
+    width: 450px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.addPet {
     width: 200px;
-    height: 200px;
-    margin-left: 40%;
-    margin-right: 40%;
+}
+
+input {
+    display: block;
+    margin: 10px auto;
+    font-size: 20px;
+}
+
+select {
+    width: 75px;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.inlineType {
+    margin: 0 auto;
+}
+
+h4 {
+    display: inline-block;
+    padding-right: 10px;
+}
+
+.adoptMeSection {
+    margin: 0 auto;
+}
+
+.adoptMeButton {
+    padding: 5px;
+    font-size: 18px;
+    margin: 10px;
+    width: 100px;
 }
 
 h1 {
@@ -11,17 +46,19 @@ h1 {
 
 .link {
     text-decoration-color: whitesmoke;
+    display: inline-block;
+    padding: 10px;
 }
 
 h3 {
     text-align: center;
     color: whitesmoke;
+    display: inline-block;
 }
 
 p {
-    text-align: center;
     color: whitesmoke;
-    
+    text-align: center;
 }
 
 div, .types {

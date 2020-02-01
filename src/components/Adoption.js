@@ -1,36 +1,17 @@
-import React from 'react';
-import Cats from './Cats';
-import Dogs from './Dogs';
-import config from '../config';
+// import React from 'react';
+// import Cats from './Cats';
+// import Dogs from './Dogs';
 
 
-class Adoption extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentCat: {},
-      currentDog: {}
-    }
-  }
+// class Adoption extends React.Component {
+//   render() {
+//     return(
+//       <div className="adoptionContainer">
+//         <Cats />
+//         <Dogs />
+//       </div>
+//     )
+//   }
+// }
 
-  componentDidMount() {
-    return fetch(`${config.API_URL}/users`, {
-      method: 'POST',
-      headers: {
-        'content-type':'application/json'
-      },
-      body: JSON.stringify({name: 'You'}) 
-    });
-  }
-
-  render() {
-    return(
-      <div className="adoptionContainer">
-        <Cats />
-        <Dogs />
-      </div>
-    )
-  }
-}
-
-export default Adoption;
+// export default Adoption;

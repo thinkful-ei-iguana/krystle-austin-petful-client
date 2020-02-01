@@ -1,42 +1,22 @@
 import React from 'react';
 import Cats from './Cats';
 import Dogs from './Dogs';
+import Context from './Context'
 
 class AllPets extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      showDogs: false,
-      showCats: false,
-    }
-  }
-
-  selectCats = () => {
-    this.setState({
-      showDogs: false,
-      showCats: true
-    })
-  }
-  selectDogs = () => {
-    this.setState({
-      showDogs: true,
-      showCats: false
-    })
-  }
+  static contextType = Context;
 
   render(){
     return(
       <div className="allAnimals">
         <div className="types">
-          <button onClick={this.selectCats}>Cats</button>
-          <button onClick={this.selectDogs}>Dogs</button>
+          <button onClick={this.props.selectCats}>Cats</button>
+          <button onClick={this.props.selectDogs}>Dogs</button>
         </div>
-        {this.state.showCats && <Cats />}
-        {this.state.showDogs && <Dogs />}
+        {this.context.showCats && <Cats handleAdoption={this.props.handleAdoption}/>}
+        {this.context.showDogs && <Dogs handleAdoption={this.props.handleAdoption}/>}
       </div>
     )
-
-
   }
 }
 

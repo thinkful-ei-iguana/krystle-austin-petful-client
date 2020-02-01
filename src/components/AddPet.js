@@ -20,18 +20,22 @@ class AddPet extends React.Component {
   render() {
     return(
       <div>
-        Pets Here! Add Your Pets here!
-        <form className="submissionForm" onSubmit={this.handleSubmit}> 
-          <select onChange={this.handleSelect}>Animal Type
-            <option value="cat">Cat</option>
-            <option value="dog">Dog</option>
-          </select>
-          <label htmlFor='animalName'>Name</label>
+        Need Help Finding Your Furry Friend A Home?
+        <form className="submissionForm" onSubmit={this.handleSubmit}>
+          <div className="inlineType">
+            <h4 className="petType">Type:</h4> 
+            <select onChange={this.handleSelect}>Animal Type
+              <option value="cat">Cat</option>
+              <option value="dog">Dog</option>
+            </select>
+          </div>
+          <label htmlFor='animalName'/>
           <input id='animalName' value={this.setName} placeholder="Name" required></input>
           <input id='animalSex' value={this.setSex} placeholder="Sex" required></input>
           <input required id='animalBreed' placeholder='Breed'></input>
           <input required id='animalColor' placeholder='Color'></input>
-          <button type='Submit'>Place Pet for Adoption</button>
+          <br/>
+          <button className="addPet" type='Submit'>Place Pet for Adoption</button>
         </form>
       </div>
     )
