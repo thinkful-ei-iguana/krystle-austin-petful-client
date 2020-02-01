@@ -7,11 +7,13 @@ class Cats extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      cats: {}
+      cats: {},
+      users: {}
     }
   }
   componentDidMount() {
     this.getCurrentCat();
+    this.getCurrentUser();
   }
 
   getCurrentCat = () => {
@@ -30,10 +32,27 @@ class Cats extends React.Component {
     })
   }
 
+  getCurrentUser = () => {
+    return fetch(`${config.API_URL}/users`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json'
+      }
+    })
+    .then(res => res.json())
+    .then(users => this.setCurrentUser(users[0]));
+  }
+  setCurrentUser = (user) => {
+    this.setState({
+      users: user
+    })
+  }
+
   handleAdoption = (ev) => {
     ev.preventDefault();
     this.adoptCat();
     this.getCurrentCat();
+    this.setUserToAdopt();
   }
 
   adoptCat = () => {
@@ -45,10 +64,20 @@ class Cats extends React.Component {
     })
   }
 
+  setUserToAdopt = () => {
+    return fetch(`${config.API_URL}/users`, {
+      method: 'DELETE',
+      headers: {
+        'content-type':'application/json'
+      }
+    })
+  }
+
   render() {
     return(
       <div className="Cats">
         <h3>{this.state.cats.name}</h3>
+        <h3>{this.state.users.name}</h3>
          <img src={this.state.cats.imageURL} alt={this.state.cats.imageDescription}/>
         <p>Sex: {this.state.cats.sex}</p>
         <p>Age: {this.state.cats.age}</p>

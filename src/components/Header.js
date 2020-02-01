@@ -7,7 +7,7 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      users: {}
+      user: {}
     }
   }
   componentDidMount() {
@@ -21,12 +21,12 @@ class Header extends React.Component {
       }
     })
     .then(res => res.json())
-    .then(user => this.setPerson(user[0]));
+    .then(user => this.setUser(user[0]));
   }
 
-  setPerson = (user) => {
+  setUser = (user) => {
     this.setState({
-      users: user
+      user: user
     })
   }
 
@@ -37,7 +37,7 @@ class Header extends React.Component {
         <Link className="link" to='/'>
           <h1>Petful</h1>
         </Link>
-        <div className="adoptionQueue">Now adopting: {this.state.users.name}</div>
+        <div className="adoptionQueue">{this.state.user.name} is currently adopting</div>
         <div className="links">
           <Link className="link" to='/about'><p>About Adoption</p></Link>
           <Link className="link" to='/animals'><p>Our Pets</p></Link>
