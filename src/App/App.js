@@ -45,6 +45,7 @@ class App extends React.Component {
     this.getCurrentUser();
     this.adoptDog();
     this.getCurrentDog();
+    this.getAllUsers();
   }
 
   componentDidMount() {
