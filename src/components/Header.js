@@ -22,7 +22,7 @@ class Header extends React.Component {
           <Link className="link" to='/about'><p>About</p></Link>
           {/* <Link className="link" to='/animals'><p>Our Pets</p></Link> */}
           <Link className="link" to='/adopt'><p>Adopt</p></Link>
-          <Link className="link" to='/add'><p>Add Pet</p></Link>
+          {/* <Link className="link" to='/add'><p>Add Pet</p></Link> */}
         </div>
           </BrowserRouter>
       </div>
