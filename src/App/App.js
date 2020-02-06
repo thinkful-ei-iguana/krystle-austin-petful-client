@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../components/Header';
 import HomePage from '../components/HomePage';
-import AddPet from '../components/AddPet';
+// import AddPet from '../components/AddPet';
 import About from '../components/About';
 import AllPets from '../components/AllPets';
 import config from '../config'
@@ -19,7 +19,8 @@ class App extends React.Component {
       showCats: false,
       currentCat: {},
       currentDog: {},
-      users: {}
+      users: [],
+      allUsers: []
     }
   }
 
@@ -50,6 +51,7 @@ class App extends React.Component {
     this.getCurrentCat();
     this.getCurrentUser();
     this.getCurrentDog();
+    this.getAllUsers();
   }
 
   getCurrentCat = () => {
@@ -125,6 +127,27 @@ class App extends React.Component {
     })
   }
 
+  getAllUsers = () => {
+    return fetch(`${config.API_URL}/users`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json'
+      }
+    })
+    .then(res => {
+      return res.json();
+    })
+    .then((users) => {
+      this.setState({
+        allUsers: users.map(user => ({
+          name: user.name
+        })
+        )
+      })
+      console.log(this.state.allUsers)
+    })
+}
+
   render() {
     return (
       <Context.Provider value={this.state}>
@@ -139,7 +162,7 @@ class App extends React.Component {
                 selectDogs={this.selectDogs} 
                 handleAdoption={this.handleAdoption}
             />}}/>
-            <Route path='/add' component={AddPet} />
+            {/* <Route path='/add' component={AddPet} /> */}
           </div>
         </BrowserRouter>
       </Context.Provider>

@@ -29,6 +29,16 @@ h4 {
     padding-right: 10px;
 }
 
+.adoptionQueue {
+    list-style-type: none;
+    margin-bottom: 15px;
+}
+
+.inLine {
+    display: inline;
+    padding: 10px;
+}
+
 .adoptMeSection {
     margin: 0 auto;
 }
